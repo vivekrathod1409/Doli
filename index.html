@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary Meta -->
+<title>Happy Birthday!</title>
+<meta name="title" content="Happy Birthday!">
+<meta name="description" content="A beautiful birthday surprise page with animations, love, and joy.">
+<meta name="keywords" content="birthday, happy birthday, surprise, celebration, gift">
+<meta name="author" content="Your Name">
+<meta name="robots" content="index, follow">
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#ff69b4">
+
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="https://files.catbox.moe/ry9kyx.jpeg">
+<link rel="apple-touch-icon" href="https://files.catbox.moe/ry9kyx.jpeg">
+
+<!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourwebsite.com/">
+<meta property="og:title" content="Happy Birthday! 🎉">
+<meta property="og:description" content="A special birthday surprise page made with love 💖">
+<meta property="og:image" content="https://files.catbox.moe/ry9kyx.jpeg">
+
+<!-- Twitter Card (X icon preview 😏) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://yourwebsite.com/">
+<meta name="twitter:title" content="Happy Birthday! 🎉">
+<meta name="twitter:description" content="A special birthday surprise page made with love 💖">
+<meta name="twitter:image" content="https://files.catbox.moe/ry9kyx.jpeg">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://yourwebsite.com/">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-cake"><i data-lucide="cake"></i></div>
+  <div class="loader-text">Preparing something special...</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<!-- PROGRESS BAR -->
+<div class="auto-progress" id="progressBar"></div>
+
+<!-- PARTICLES -->
+<div class="particles" id="particles"></div>
+
+<!-- NAV DOTS -->
+<div class="nav-dots" id="navDots"></div>
+
+<!-- MUSIC TOGGLE -->
+<button class="music-togge" id="musicBtn" title="Toggle Music">
+  <div class="music-bars">
+    <div class="music-bar"></div>
+    <div class="music-bar"></div>
+    <div class="music-bar"></div>
+    <div class="music-bar"></div>
+  </div>
+</button>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
+  <img id="lightbox-img" src="" alt="Photo">
+</div>
+
+<main>
+  <!-- 0: HERO -->
+  <div class="page-section hero visible" data-section="Welcome">
+    <div class="hero-badge"><i data-lucide="sparkles"></i> It's a Special Day!</div>
+    <h1>Happy Birthday<br>Mampi❤️</h1>
+    <p class="hero-sub">Wishing you the most magical day <i data-lucide="star"></i></p>
+    <button class="nav-btn" onclick="goToSection(1)">Begin the Journey <i data-lucide="arrow-right"></i></button>
+  </div>
+
+  <!-- 1: SPECIAL MESSAGE -->
+  <div class="page-section" data-section="Message" id="sec-message">
+    <h2 class="section-title"><span class="title-icon"><i data-lucide="mail"></i></span>A Special Message</h2>
+    <div class="message-card">
+      <p>Dear Mampi,</p>
+      <br>
+      <p>On this beautiful day, I want you to know how incredibly special you are. Your smile lights up every room, your kindness touches every heart, and your spirit inspires everyone around you.</p>
+      <br>
+      <p>May this new year of your life bring you endless joy, boundless love, and all the dreams your heart desires. You deserve every bit of happiness the world has to offer. <i data-lucide="flower-2" class="inline-icon"></i></p>
+      <br>
+      <p>Here's to another year of adventures, laughter, and beautiful memories together. Never stop being the amazing person you are!</p>
+      <div class="signature">With all my love <i data-lucide="heart"></i></div>
+    </div>
+    <div class="section-nav">
+      <button class="nav-btn" onclick="goToSection(0)"><i data-lucide="chevron-left"></i> Back</button>
+      <button class="nav-btn" onclick="goToSection(2)">Next<i data-lucide="chevron-right"></i></button>
+    </div>
+  </div>
+
+
+
+  <!-- 3: CAKE -->
+  <div class="page-section" data-section="Cake" id="sec-cake">
+    <h2 class="section-title"><span class="title-icon"><i data-lucide="cake"></i></span>Make a Wish!</h2>
+    <div class="cake-section">
+      <div class="cake-container" id="cakeBox">
+        <div class="candle-glow"></div>
+        <div class="cake-emoji"><i data-lucide="cake"></i></div>
+      </div>
+      <p style="color:var(--text-muted);margin-bottom:1rem">Close your eyes, make a wish, and blow! <i data-lucide="wind" class="inline-icon"></i></p>
+      <button class="blow-btn" onclick="blowCandles()"><i data-lucide="wind"></i> Blow the Candles!</button>
+    </div>
+    <div class="section-nav">
+      <button class="nav-btn" onclick="goToSection(1)"><i data-lucide="chevron-left"></i> Back</button>
+      <button class="nav-btn" onclick="goToSection(3)">Next Wishes <i data-lucide="chevron-right"></i></button>
+    </div>
+  </div>
+
+  <!-- 4: WISHES -->
+  <div class="page-section" data-section="Wishes" id="sec-wishes">
+    <h2 class="section-title"><span class="title-icon"><i data-lucide="gift"></i></span>Birthday Wishes</h2>
+    <div class="wishes-grid">
+      <div class="wish-card"><div class="wish-icon"><i data-lucide="sun"></i></div><p class="wish-text">May your life be as colorful and vibrant as a rainbow after the rain.</p></div>
+      <div class="wish-card"><div class="wish-icon"><i data-lucide="trophy"></i></div><p class="wish-text">Wishing you success in everything you touch this year and always.</p></div>
+      <div class="wish-card"><div class="wish-icon"><i data-lucide="feather"></i></div><p class="wish-text">May you spread your wings and soar to new heights this birthday!</p></div>
+      <div class="wish-card"><div class="wish-icon"><i data-lucide="flower-2"></i></div><p class="wish-text">Like a sunflower, may you always turn towards the light and grow.</p></div>
+      <div class="wish-card"><div class="wish-icon"><i data-lucide="laugh"></i></div><p class="wish-text">Here's to more laughter, more adventures, and more beautiful moments!</p></div>
+      <div class="wish-card"><div class="wish-icon"><i data-lucide="heart"></i></div><p class="wish-text">Luck, love, and happiness — may they follow you everywhere you go.</p></div>
+    </div>
+    <div class="section-nav">
+      <button class="nav-btn" onclick="goToSection(2)"><i data-lucide="chevron-left"></i> Back</button>
+      <button class="nav-btn" onclick="goToSection(4)">Next Celebrate <i data-lucide="chevron-right"></i></button>
+    </div>
+  </div>
+
+  <!-- 5: GIF CELEBRATION -->
+  <div class="page-section" data-section="Celebrate" id="sec-gifs">
+    <h2 class="section-title"><span class="title-icon"><i data-lucide="party-popper"></i></span>Celebration Vibes</h2>
+    <div class="gif-grid">
+      <div class="gif-item">
+        <img loading="lazy" src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyeXBzMDZ3djd6ZnAxZjJkcmVoZ28weGlrYzl5M3ZrbTFraWZ4Y3J6dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Celebration">
+      </div>
+      <div class="gif-item">
+        <img loading="lazy" src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUycmJieHBuNjN3bDk3OGg1ZG9za203aDlrMjV1cDJvb24wNTV4bTg2cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lMameLIF8voLu8HxWV/giphy.gif" alt="Birthday">
+      </div>
+      <div class="gif-item">
+        <img loading="lazy" src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyd295Z2tmNDdiOGphd3NvanlhbDJrbzRkYm9qOHl2aTRhZ3dtc2prMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cmJmdyNCM0XgtUazQl/giphy.gif" alt="Party">
+      </div>
+    </div>
+    <div class="section-nav" style="margin-top:2rem">
+      <button class="nav-btn" onclick="goToSection(3)"><i data-lucide="chevron-left"></i> Back</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Made by V.B.Rathod <span class="heart"><i data-lucide="heart"></i></span> just for you</p>
+    <p style="margin-top:.5rem;font-size:.75rem;color:rgba(255,255,255,0.3)">
+      <span class="footer-cake"><i data-lucide="cake"></i> Happy Birthday Mampi 🕊️❤️</span>
+    </p>
+  </footer>
+</main>
+
+<!-- BG MUSIC -->
+<audio id="bgMusic" loop preload="none">
+  <source src="https://files.catbox.moe/j0gnqj.mp3" type="audio/mpeg">
+</audio>
+
+<!-- LUCIDE ICONS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.383.0/dist/umd/lucide.min.js"></script>
+
+<script src="main.js"></script>
+</body>
+  </html>
+  
